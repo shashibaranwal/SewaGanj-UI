@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - SewaGanj</title>
+    <link rel="stylesheet" href="css_sg/profile.css" />
+  </head>
+  <body>
+    <!-- ----------------------- Salon Section ------------------------ -->
+    <section class="salon">
+      <div class="wrapper">
+        <img src="assets/images/ppt-banner_profile copy.png" width="100%" />
+      </div>
+      <div class="profile-section wrapper">
+        <!-- ------------- price category --------------- -->
+        <div class="grid-one">
+          <div class="profile-category">
+            <div class="category">
+                <a href="#userProfile" id="userProfileLink">My details</a>
+            </div>
+            <div class="category">
+                <a href="#vendor" id="kycLink">KYC verification</a>
+            </div>
+            <div class="category">
+                <a href="#notification" id="noticeLink">Notification</a>
+            </div>
+          </div>
+          <div class="typing-effect">
+            <div id="text"></div>
+
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+              var typed = new Typed("#text", {
+                strings: [
+                  "SEWAGANJ, Just For YOU",
+                  "Choose Us For Quality Service.",
+                  "We are Here For You.",
+                ],
+                typeSpeed: 30,
+                loop: true,
+              });
+            </script>
+          </div>
+          <hr />
+          <div class="copy-right">
+            <p>SewaGanj © 2024. All Rights Reserved.</p>
+          </div>
+        </div>
+        <!-- -----------  Price listing ---------------- -->
+        <div class="salon-price-list">
+          <div class="profile" id="kyc">
+            <h2>KYC Form</h2>
+            <form action="/submit_kyc" method="post" enctype="multipart/form-data">
+                <!-- Personal Information -->
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                
+                <!-- Contact Details -->
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <!-- Document Uploads -->
+                <div class="form-group">
+                    <label for="idProof">ID Proof:</label>
+                    <input type="file" id="idProof" name="idProof" accept="image/*,application/pdf" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="addressProof">Address Proof:</label>
+                    <input type="file" id="addressProof" name="addressProof" accept="image/*,application/pdf" required>
+                </div>
+                
+                <!-- Agreement -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="agreement" required>
+                        I hereby declare that the information provided is true and correct to the best of my knowledge.
+                    </label>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit">Submit KYC</button>
+                </div>
+            </form>
+          </div>
+
+          <div class="profile" id="userProfile">
+            <h2>User Profile</h2>
+            <div class="profile-detail">
+              <img src="assets/images/userIcon.svg" width="120px" alt="" />
+              <p>Full Name: ABC</p>
+              <p>email: admin@admin.com</p>
+              <p>Phone no.: +977-9800000000</p>
+            </div>
+          </div>
+          <div class="profile" id="notification">
+            <h2>Notification</h2>
+            <div class="profile-detail">
+              <h3>Work near paanmandi, Ghantaghar</h3>
+              <p>Job: AC repair</p>
+              <p>Phone no.: +977-9800000000</p>
+              <button>view more</button>
+            </div>
+          </div>
+          <!-- ----------------------- JS ----------------------------- -->
+          <script>
+            // Function to show user profile
+            document.getElementById('userProfileLink').addEventListener('click', function() {
+              document.getElementById('userProfile').style.display = 'block';
+              document.getElementById('kyc').style.display = 'none';
+              document.getElementById('notification').style.display = 'none';
+            });
+      
+            // Function to show vendor profile
+            document.getElementById('kycLink').addEventListener('click', function() {
+              document.getElementById('kyc').style.display = 'block';
+              document.getElementById('userProfile').style.display = 'none';
+              document.getElementById('notification').style.display = 'none';
+            });
+
+            // Function to show notification
+            document.getElementById('noticeLink').addEventListener('click', function() {
+              document.getElementById('kyc').style.display = 'none';
+              document.getElementById('userProfile').style.display = 'none';
+              document.getElementById('notification').style.display = 'block';
+            });
+      
+            // Initially, hide both profiles or show one by default
+            document.getElementById('userProfile').style.display = 'none';
+            document.getElementById('kyc').style.display = 'none';
+            document.getElementById('notification').style.display = 'none';
+          </script>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
